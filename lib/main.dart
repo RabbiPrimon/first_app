@@ -1,58 +1,60 @@
-//Button ( Elevated button, TextButton IconButton,GestureDetector, InkWell,)| TextFeild | Container|
 import 'package:flutter/material.dart';
+import 'package:ostad_assignment2/views/landscapeScreen.dart';
+import 'package:ostad_assignment2/views/portraitScreen.dart';
+
+import 'const/app_colors.dart';
 
 void main() {
-  runApp(MaterialApp
-    (title: 'Hello Primon',
-      home: Home()
-  )
-  );
+  runApp(MyApp());
 }
 
-/* Column => Vertically => mainAxis
-   Row => Horizontally => crossAxis
-*/
-class Home extends StatelessWidget {
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
-  Widget build(BuildContext) {
-    //whatever you write will show in screen
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(backgroundColor: AppColors.greenColor),
+      ),
+      home: HomeScreen(),
+    );
+  }
+}
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.tealAccent,
-        appBar: AppBar(
-          backgroundColor: Colors.white70,
-          title: Text(
-            'Home Screen',
-            style: TextStyle(color: Colors.black),
-          ),
-          leading: Icon(
-            Icons.home_filled,
-            color: Colors.black,
-          ),
-          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.add))],
+      appBar: AppBar(
+        title: const Text('Photo Gallery'),
+        centerTitle: true,
+        leading: Container(
+          margin: EdgeInsets.all(8),
+          decoration: BoxDecoration(
+              color: AppColors.grayColor.withOpacity(0.5),
+              borderRadius: BorderRadius.circular(12)),
+          child: Icon(Icons.arrow_back_ios_outlined),
         ),
-        body: Center(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8)
-                    )
-                ),
-                onPressed: () {
-                  print("Pressed");
-                },
-                child: Text(
-                  "Press here",
-                ))
-          ],
-        )
-        )
+        actions: [
+          Icon(Icons.more_vert_outlined),
+        ],
+      ),
+      body: OrientationBuilder(
+        builder: (context, orientation) {
+          return orientation == Orientation.portrait
+              ? PortraitScreen()
+              : LandScapeScreen();
+        },
+      ),
     );
   }
 }
