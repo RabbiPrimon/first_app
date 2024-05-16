@@ -1,3 +1,4 @@
+//SingleLineScrollView, ListView,
 import 'package:flutter/material.dart';
 
 main() {
@@ -115,11 +116,12 @@ class MyApp extends StatelessWidget {
 
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
+        floatingActionButton: FloatingActionButton(
           onPressed: () {},
           child: Icon(Icons.add_a_photo),
           backgroundColor: Colors.amber.shade700,
+
+      ),
       ),
     );
   }
