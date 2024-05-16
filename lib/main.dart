@@ -1,59 +1,125 @@
 import 'package:flutter/material.dart';
-import 'package:ostad_assignment2/views/landscapeScreen.dart';
-import 'package:ostad_assignment2/views/portraitScreen.dart';
 
-import 'const/app_colors.dart';
-
-void main() {
+main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(backgroundColor: AppColors.greenColor),
-      ),
-      home: HomeScreen(),
-    );
-  }
-}
-
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Photo Gallery'),
-        centerTitle: true,
-        leading: Container(
-          margin: EdgeInsets.all(8),
-          decoration: BoxDecoration(
-              color: AppColors.grayColor.withOpacity(0.5),
-              borderRadius: BorderRadius.circular(12)),
-          child: Icon(Icons.arrow_back_ios_outlined),
+      home: Scaffold(
+        backgroundColor: Colors.amber.shade100,
+        appBar: AppBar(
+          title: Text("Home Screen"),
+          foregroundColor: Colors.black,
+          backgroundColor: Colors.amber.shade700,
+          centerTitle: true,
+          leading: Icon(Icons.home),
         ),
-        actions: [
-          Icon(Icons.more_vert_outlined),
-        ],
+        // body: SingleChildScrollView(
+        //   child: Column(
+        //       children: [
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //     Text('Memorzing widget'),
+        //   ] // style: TextStyle(
+        //       //   fontSize: 22, fontWeight: FontWeight.bold,
+        //       //   letterSpacing: 2,
+        //       //   color: Colors.grey.shade700,
+        //       // ),
+        //       ),
+        body: ListView(
+          children: [
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+            Text('Memorzing widget'),
+
+          ],
+        ),
       ),
-      body: OrientationBuilder(
-        builder: (context, orientation) {
-          return orientation == Orientation.portrait
-              ? PortraitScreen()
-              : LandScapeScreen();
-        },
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(Icons.add_a_photo),
+          backgroundColor: Colors.amber.shade700,
       ),
     );
   }
